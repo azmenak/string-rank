@@ -57,6 +57,17 @@ export function toBijective(base10value: number): string {
   return accumulator + ((base10value % 26 || 26) + 9).toString(36)
 }
 
+/**
+ * Given 2 rank strings in the format `abc:xyz`, where `:xyz` are optional,
+ * returns a new rank string at the halfway distance between these two string.
+ *
+ * If there is no distance between 2 given strings, a new charcter is appended
+ * which will generate a string that is lexographically between the passed
+ * rank strings.
+ *
+ * @param a rank string
+ * @param b other rank string
+ */
 export function betweenRanks(a: string, b: string): string {
   const [above, below] = a < b ? [a, b] : [b, a]
 

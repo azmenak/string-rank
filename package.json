@@ -1,0 +1,53 @@
+{
+  "name": "string-rank",
+  "version": "1.0.0",
+  "description": "Generate string to use as ranks in a database",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azmenak/string-rank"
+  },
+  "scripts": {
+    "test": "jest",
+    "version": "npx @pika/pack"
+  },
+  "keywords": [
+    "string-rank",
+    "sortable",
+    "reorderable",
+    "database",
+    "typescript",
+    "esm",
+    "pika"
+  ],
+  "author": "Adam Zmenak <adam.zmenak@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-node": "^0.8.1",
+    "@pika/plugin-build-web": "^0.8.1",
+    "@pika/plugin-ts-standard-pkg": "^0.8.1",
+    "@pika/types": "^0.8.1",
+    "@types/jest": "^24.0.25",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg",
+        {
+          "exclude": [
+            "*.spec.*"
+          ]
+        }
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  }
+}
